@@ -1,9 +1,9 @@
 <template>
   <div class="home">
-    <div id="cut-0" class="cut">
+    <div id="cut-0" class="cut cover">
       <h1 class="title" v-bind:style="titleStyle"><span class="space">反對逃犯條例修訂草案事件簿</span></h1>
     </div>
-    <div class="content-wrap" v-bind:style="{ height: height * 5 + 'px' }">
+    <div class="content-wrap" v-bind:style="{ height: height * 14 + 'px' }">
       <Map v-if="isLoaded"
            v-bind:width="width"
            v-bind:height="height"
@@ -11,13 +11,110 @@
            v-bind:road="HKRoad"
            v-bind:march="HKMarch"/>
       <div class="map-content-wrap">
-        <div id="cut-1" class="cut">
+        <div class="cut">
           <div class="box">
-            <h3>2019/06/09 14:30 103萬人</h3>
+            <h3>發生地</h3>
+            <h1 class="box-title">香港</h1>
+          </div>
+        </div>
+        <div class="cut">
+          <div class="box">
+            <h3>2019/06/09 103萬人</h3>
             <h1 class="box-title">香港反送中大遊行</h1>
           </div>
         </div>
-        <div id="cut-2" class="cut">
+        <div class="cut cut-bottom">
+          <div class="box">
+            <h3>2019/06/09 14:20</h3>
+            <h1 class="box-title">由維園草坪起步，遊行至金鐘立法會</h1>
+          </div>
+        </div>
+        <div class="cut">
+          <div class="image">
+            <img class="image"
+                 alt="2019年6月反對逃犯條例修訂草案遊行，攝於金鐘軍器廠街口，望軒尼詩道。"
+                 src="../assets/img/0609/01.jpg" />
+            <span><a href="https://zh.wikipedia.org/wiki/2019%E5%B9%B46%E6%9C%889%E6%97%A5%E5%8F%8D%E5%B0%8D%E9%80%83%E7%8A%AF%E6%A2%9D%E4%BE%8B%E4%BF%AE%E8%A8%82%E8%8D%89%E6%A1%88%E9%81%8A%E8%A1%8C#/media/File:June9protestTreefong03.jpg" target="_blank">Hf9631</a></span>
+          </div>
+        </div>
+        <div class="cut">
+          <div class="box">
+            <h3>2019/06/09 15:55</h3>
+            <h1 class="box-title">抵達終點、金鐘立法會外的示威區</h1>
+          </div>
+        </div>
+        <div class="cut">
+          <div class="box">
+            <h3>2019/06/09 17:00</h3>
+            <h1 class="box-title">因參與者數目太多，遊行隊伍龍尾一度延長至北角電廠街一帶</h1>
+          </div>
+        </div>
+        <div class="cut cut-start">
+          <div class="box">
+            <h3>2019/06/09 19:00</h3>
+            <div class="image">
+              <img class="image" alt="晚上7時，民陣在立法會道舉行集會" src="../assets/img/0609/02.jpg" />
+              <span><a href="https://zh.wikipedia.org/wiki/2019%E5%B9%B46%E6%9C%889%E6%97%A5%E5%8F%8D%E5%B0%8D%E9%80%83%E7%8A%AF%E6%A2%9D%E4%BE%8B%E4%BF%AE%E8%A8%82%E8%8D%89%E6%A1%88%E9%81%8A%E8%A1%8C#/media/File:Demonstration_in_Legislative_Council_Road_20190609.jpg" target="_blank">Wpcpey</a></span>
+            </div>
+            <h1 class="box-title">民陣在立法會道舉行集會</h1>
+          </div>
+        </div>
+        <div class="cut cut-start">
+          <div class="box">
+            <h3>2019/06/09 21:00</h3>
+            <div class="image">
+              <img class="image" alt="晚上9時，警方出動多輛運員車等警車戒備" src="../assets/img/0609/03.jpg" />
+              <span><a href="https://zh.wikipedia.org/wiki/2019%E5%B9%B46%E6%9C%889%E6%97%A5%E5%8F%8D%E5%B0%8D%E9%80%83%E7%8A%AF%E6%A2%9D%E4%BE%8B%E4%BF%AE%E8%A8%82%E8%8D%89%E6%A1%88%E9%81%8A%E8%A1%8C#/media/File:June9protestTreefong06.jpg" target="_blank">Hf9631</a></span>
+            </div>
+            <h1 class="box-title">警方出動多輛運員車等警車戒備</h1>
+          </div>
+        </div>
+
+        <div class="cut">
+          <div class="box">
+            <h3>2019/06/12 12萬人</h3>
+            <h1 class="box-title">群眾佔領行動</h1>
+          </div>
+        </div>
+        <div class="cut">
+          <div class="box">
+            <h3>2019/06/12 07:55</h3>
+            <h1 class="box-title">示威者衝出夏慤道與龍和道，展開佔領行動</h1>
+          </div>
+        </div>
+        <div class="cut">
+          <div class="box">
+            <h3>2019/06/12 12:00</h3>
+            <div class="image">
+              <img class="image" alt="中午時佔領情況" src="../assets/img/0612/01.png" />
+              <span><a href="https://zh.wikipedia.org/wiki/%E5%8F%8D%E5%B0%8D%E9%80%83%E7%8A%AF%E6%A2%9D%E4%BE%8B%E4%BF%AE%E8%A8%82%E8%8D%89%E6%A1%88%E4%BD%94%E9%A0%98%E8%A1%8C%E5%8B%95#/media/File:Demonstration_against_extradition_bill_aerial_view_20190612.png" target="_blank">立場新聞</a></span>
+            </div>
+            <h1 class="box-title">中午時佔領情況</h1>
+          </div>
+        </div>
+        <div class="cut">
+          <div class="box">
+            <h3>2019/06/12 16:00</h3>
+            <div class="image">
+              <img class="image" alt="警察在添美道附近發放催淚彈" src="../assets/img/0612/02.jpg" />
+              <span><a href="https://zh.wikipedia.org/wiki/%E5%8F%8D%E5%B0%8D%E9%80%83%E7%8A%AF%E6%A2%9D%E4%BE%8B%E4%BF%AE%E8%A8%82%E8%8D%89%E6%A1%88%E4%BD%94%E9%A0%98%E8%A1%8C%E5%8B%95#/media/File:Demonstration_against_extradition_bill,_12_June_2019.jpg" target="_blank">VOA</a></span>
+            </div>
+            <h1 class="box-title">警察在添美道附近發放催淚彈</h1>
+          </div>
+        </div>
+        <div class="cut cut-start">
+          <div class="box">
+            <h3>2019/06/12 20:00</h3>
+            <div class="image">
+              <img class="image" alt="警方將示威者驅趕至中環干諾道中近大會堂對出" src="../assets/img/0612/03.jpg" />
+              <span><a href="https://news.mingpao.com/pns/%E8%A6%81%E8%81%9E/article/20190613/s00001/1560365252043/%E9%AB%98%E5%B3%B04%E8%90%AC%E4%BA%BA-%E5%85%A5%E5%A4%9C%E6%95%B8%E7%99%BE%E4%BA%BA%E9%80%80%E5%AE%88%E4%B8%AD%E7%92%B0-%E8%AD%A6%E7%9B%AE%E6%A8%99%E4%BF%9D%E7%AB%8B%E6%9C%83-%E6%9A%AB%E4%B8%8D%E6%B8%85%E5%A0%B4" target="_blank">明報新聞網</a></span>
+            </div>
+            <h1 class="box-title">不斷施放催淚彈之後，示威者陸續退到中環</h1>
+          </div>
+        </div>
+
+
+        <div class="cut">
           <div class="box">
             <h3>2019/06/16 14:30 200萬+1人</h3>
             <h1 class="box-title">反送中大遊行</h1>
@@ -36,7 +133,7 @@
             <path d="M124.13,270.1c1.19,2.14.8,3.6-2.07,8l-1.63-4Z"/>
           </svg>
           <div class="box">
-            <h1 class="box-title">五大訴求：</h1>
+            <h1 class="box-title">五大訴求</h1>
             <h5>撤回修訂逃犯條例、不檢控示威者、追究警方開槍責任、不將示威行動定性為暴動、林鄭月娥下台</h5>
           </div>
         </div>
@@ -102,7 +199,6 @@ export default {
     },
     scroll() {
       const zeroCutRatio = getVisualCubicRatio(getScrollTop('#cut-0', true), this.height);
-      const firstCutRatio = getVisualCubicRatio(getScrollTop('#cut-1'), this.height);
       const headCutRatio = getVisualCubicRatio(getScrollTop('#cut-head'), this.height);
 
       this.titleStyle = { ...this.titleStyle, color: `rgba(179, 179, 179, ${zeroCutRatio})` };
@@ -134,18 +230,29 @@ export default {
     font-size: 60px;
     color: #b3b3b3;
     margin-bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+  }
+  .cover {
+    background: url("../assets/cover.jpg") no-repeat center center;
+    background-size: contain;
   }
   .space {
     letter-spacing: 0.5em;
   }
   .cut {
-    width: 100%;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     overflow-x: hidden;
+    padding: 20px;
+  }
+  .cut-bottom {
+    justify-content: flex-end;
+  }
+  .cut-start {
+    justify-content: flex-start;
   }
   svg path {
     fill: currentColor;
@@ -169,5 +276,26 @@ export default {
   }
   .box-title {
     color: #fff;
+  }
+  .image {
+    position: relative;
+  }
+  .image img {
+    opacity: 0.9;
+    max-width: 100%;
+    max-height: 70vh;
+  }
+  .image span {
+    position: absolute;
+    bottom: 15px;
+    right: 10px;
+    background: #b3b3b3;
+    color: #000;
+    padding: 0 5px;
+    font-size: 11px;
+  }
+  .image span a {
+    text-decoration: none;
+    color: #000;
   }
 </style>

@@ -9,7 +9,7 @@ import * as d3 from 'd3';
 import { fillPath, setupCanvas, strokePath } from '../helpers/canvas';
 import { getScrollTop } from '../helpers/scroll';
 import mapData from '../data';
-import { addAngle, interpolateScale } from '../helpers/geo';
+import {addAngle, getPointGeo, interpolate} from '../helpers/geo';
 
 let context;
 let projection;
@@ -28,7 +28,7 @@ export default {
   mounted() {
     this.bind();
     this.initMap();
-    this.drawMap();
+    this.drawOnScroll();
     // this.drawRoad();
 
 
@@ -76,20 +76,32 @@ export default {
       if (!mapData[now] || !mapData[now + 1]) return;
       const ratio = top / this.height - now;
       // get angle
-      const { scale: lastScale } = mapData[now];
-      const { interpolateAngle, scale: nextScale } = mapData[now + 1];
-      const angle = interpolateAngle(ratio);
+      const {
+        scale, time, march, circle, point,
+      } = mapData[now];
+      const {
+        interpolateAngle, scale: nextScale, time: nextTime, march: nextMarch,
+      } = mapData[now + 1];
+      const newAngle = interpolateAngle(ratio);
       // get scale
-      const scale = interpolateScale(ratio, defaultScale * lastScale, defaultScale * nextScale);
+      const newScale = interpolate(ratio, defaultScale * scale, defaultScale * nextScale);
       // rotate and scale
-      projection = projection.scale(scale).rotate(angle);
+      projection = projection.scale(newScale).rotate(newAngle);
       // draw
       this.drawMap();
       // draw road
       if (now >= 1) this.drawRoad();
+      // draw circle
+      if (circle) this.drawCircle(point, circle);
       // draw march
-      if (now >= 2) this.drawMarch();
-
+      if (march && nextMarch) {
+        const newTime = Math.floor(interpolate(ratio, time, nextTime));
+        console.log(new Date(newTime * 1000), time, nextTime);
+        // draw one by one
+        march.forEach((marchName) => {
+          this.drawMarch(marchName, newTime, newScale / defaultScale);
+        });
+      }
     },
     drawMap() {
       // setup path renderer
@@ -102,8 +114,23 @@ export default {
     drawRoad() {
       strokePath(context, pathRenderer, this.road, '#eee');
     },
-    drawMarch() {
-      strokePath(context, pathRenderer, this.march, '#000', 5);
+    drawCircle(point, circle) {
+      strokePath(context, pathRenderer, getPointGeo(point), 'red', circle);
+    },
+    drawMarch(name, time, scale) {
+      const march = {
+        ...this.march,
+        features: this.march.features.filter(feature => feature.properties.name === name),
+      };
+      const {
+        length, start, end, color,
+      } = march.features[0].properties;
+      if (start && end) {
+        const currentLength = (time - start) / (end - start) * length;
+        strokePath(context, pathRenderer, march, color, 5, currentLength, scale);
+      } else {
+        strokePath(context, pathRenderer, march, color, 5);
+      }
     },
   },
 };

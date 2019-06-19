@@ -49,6 +49,4 @@ export const addAngle = (mapData) => {
 //   return mapData;
 // };
 
-export const interpolateScale = (t, start, end) => {
-  return (((end - start) * t) + start);
-};
+export const interpolate = (t, start, end) => (((end - start) * t) + start);

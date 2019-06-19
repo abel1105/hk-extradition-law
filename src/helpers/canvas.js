@@ -23,13 +23,21 @@ export const fillPath = (context, pathRenderer, geoJSON, color) => {
   context.fill();
 };
 
-export const strokePath = (context, pathRenderer, geoJSON, color, width = 1, dash = 0) => {
+export const strokePath = (context, pathRenderer, geoJSON, color = '#000', width = 1, length = 0, scale) => {
   context.beginPath();
   pathRenderer(geoJSON);
   context.strokeStyle = color;
   context.lineWidth = width;
-  if (dash) {
-    context.setLineDash([dash, 50000]);
+  const dash = [];
+  if (length) {
+    // 15 scale dash 680 march length 4381
+    // 15 scale dash 1 march length 6.4426470588
+    // 20 scale dash 905 length 4381
+    // 20 scale dash 1 length 4.8408839779
+    const dashRatio = 4381 / 680 * 15 / scale;
+    console.log(scale, dashRatio, dashRatio * length);
+    dash.push(length / dashRatio, 50000);
   }
+  context.setLineDash(dash);
   context.stroke();
 };

@@ -11,7 +11,7 @@
   "dependencies": {
     "core-js": "^2.6.5",
     "d3": "^5.9.2",
-    "ios-inner-height": "^1.1.0",
+    "lodash": "^4.17.11",
     "register-service-worker": "^1.6.2",
     "vue": "^2.6.10",
     "vue-analytics": "^5.17.0",
@@ -27,6 +27,7 @@
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
     "husky": "^2.4.1",
+    "lint-staged": "^8.2.1",
     "vue-template-compiler": "^2.6.10"
   },
   "eslintConfig": {
@@ -51,8 +52,14 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint"
+      "pre-commit": "lint-staged"
     }
+  },
+  "lint-staged": {
+    "*.{js,vue}": [
+      "npm run lint",
+      "git add --force"
+    ]
   },
   "browserslist": [
     "> 1%",

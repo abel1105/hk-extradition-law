@@ -6,6 +6,7 @@
 
 <script>
 import * as d3 from "d3";
+import debounce from "lodash/debounce";
 import {
   fillPath,
   fillPoint,
@@ -15,6 +16,10 @@ import {
 import { getScrollTop } from "../helpers/scroll";
 import mapData from "../data";
 import { addAngle, interpolate } from "../helpers/geo";
+
+const _ = {
+  debounce
+};
 
 let context;
 let projection;
@@ -74,9 +79,10 @@ export default {
       // add angle
       addAngle(mapData);
     },
-    resize() {
+    resize: _.debounce(function() {
       this.initMap();
-    },
+      this.drawOnScroll();
+    }, 100),
     drawOnScroll() {
       const top = getScrollTop();
       const now = Math.floor(top / this.height);

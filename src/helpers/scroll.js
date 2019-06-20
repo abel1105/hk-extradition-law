@@ -1,6 +1,7 @@
 export const getScrollTop = (selector, start = false) => {
-  let top = (window.pageYOffset || document.documentElement.scrollTop)
-  - (document.documentElement.clientTop || 0);
+  let top =
+    (window.pageYOffset || document.documentElement.scrollTop) -
+    (document.documentElement.clientTop || 0);
 
   if (selector) {
     const node = document.querySelector(selector);
@@ -18,7 +19,8 @@ export const getVisualCubicRatio = (top, height) => {
   ratio = ratio <= 1 ? ratio : 2 - ratio;
   if (ratio > 1) {
     return 1;
-  } if (ratio < 0) {
+  }
+  if (ratio < 0) {
     return 0;
   }
   return ratio * ratio * ratio;

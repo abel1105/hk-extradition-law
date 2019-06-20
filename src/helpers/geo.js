@@ -1,20 +1,15 @@
 // lift from https://observablehq.com/@d3/world-tour?collection=@observablehq/maps
-import * as d3 from 'd3';
-import Versor from './Versor';
+import Versor from "./Versor";
 
-const tilt = 20;
-
-export const getPointGeo = coor => (
-  {
-    type: 'Feature',
-    geometry: {
-      type: 'Point',
-      coordinates: coor,
-    },
+export const getPointGeo = coor => ({
+  type: "Feature",
+  geometry: {
+    type: "Point",
+    coordinates: coor
   }
-);
+});
 
-export const addAngle = (mapData) => {
+export const addAngle = mapData => {
   let p = [0, 0];
   let r1;
   let r2 = [0, 0, 0];
@@ -29,7 +24,6 @@ export const addAngle = (mapData) => {
   }
   return mapData;
 };
-
 
 // export const addAngle = (mapData, [lon, lat]) => {
 //   let p1;
@@ -49,4 +43,4 @@ export const addAngle = (mapData) => {
 //   return mapData;
 // };
 
-export const interpolate = (t, start, end) => (((end - start) * t) + start);
+export const interpolate = (t, start, end) => (end - start) * t + start;

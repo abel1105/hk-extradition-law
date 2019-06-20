@@ -424,6 +424,9 @@
           href="https://github.com/abel1105/hk-extradition-law"
           target="_blank"
           >Abel</a
+        ><br />LOGO：
+        <a href="https://www.facebook.com/hkantiextradition/"
+          >Hong Kong Anti Extradition Law</a
         >
       </h5>
     </div>
@@ -432,7 +435,6 @@
 
 <script>
 import * as d3 from "d3";
-import innerHeight from "ios-inner-height";
 // @ is an alias to /src
 import Map from "../components/Map.vue";
 import { getVisualCubicRatio, getScrollTop } from "../helpers/scroll";
@@ -445,7 +447,7 @@ export default {
   data() {
     return {
       isLoaded: false,
-      height: innerHeight(),
+      height: window.innerHeight,
       width: document.documentElement.clientWidth,
       titleStyle: {
         color: "rgba(179, 179, 179, 1)"
@@ -477,8 +479,10 @@ export default {
       window.removeEventListener("resize", this.resize);
     },
     resize() {
-      this.height = innerHeight();
-      this.width = document.documentElement.clientWidth;
+      if (this.width !== document.documentElement.clientWidth) {
+        this.height = window.innerHeight;
+        this.width = document.documentElement.clientWidth;
+      }
     },
     scroll() {
       const zeroCutRatio = getVisualCubicRatio(

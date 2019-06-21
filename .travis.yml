@@ -10,13 +10,14 @@ script:
   - npm run lint
 
 before_deploy:
-  - git config user.name "${GITHUB_NAME}"
-  - git config user.email "${GITHUB_EMAIL}"
   - npm run build
 
 deploy:
-  provider: script
-  script: bash deploy.sh
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  keep_history: true
+  local_dir: "dist"
   on:
     branch: master
     tags: true

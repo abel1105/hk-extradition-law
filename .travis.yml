@@ -12,6 +12,7 @@ script:
 before_deploy:
   - git config user.name "${GITHUB_NAME}"
   - git config user.email "${GITHUB_EMAIL}"
+  - npm run build
 
 deploy:
   provider: script

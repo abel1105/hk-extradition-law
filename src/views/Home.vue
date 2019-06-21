@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <div id="cut-0" class="cut cover">
+    <div id="cut-0" class="cut cover" v-bind:style="cutStyle">
       <h1 class="title" v-bind:style="titleStyle">
         <span class="space">反對逃犯條例修訂草案事件簿</span>
       </h1>
@@ -15,25 +15,25 @@
         v-bind:march="HKMarch"
       />
       <div class="map-content-wrap">
-        <div class="cut">
+        <div class="cut" v-bind:style="cutStyle">
           <div class="box">
             <h3>發生地</h3>
             <h1 class="box-title">香港</h1>
           </div>
         </div>
-        <div class="cut">
+        <div class="cut" v-bind:style="cutStyle">
           <div class="box">
             <h3>2019/06/09 103萬人</h3>
             <h2 class="box-title">香港反送中大遊行</h2>
           </div>
         </div>
-        <div class="cut cut-bottom">
+        <div class="cut cut-bottom" v-bind:style="cutStyle">
           <div class="box">
             <h3>2019/06/09 14:20</h3>
             <h1 class="box-title">由維園草坪起步，遊行至金鐘立法會</h1>
           </div>
         </div>
-        <div class="cut">
+        <div class="cut" v-bind:style="cutStyle">
           <div class="image">
             <img
               class="image"
@@ -49,13 +49,13 @@
             >
           </div>
         </div>
-        <div class="cut">
+        <div class="cut" v-bind:style="cutStyle">
           <div class="box">
             <h3>2019/06/09 15:55</h3>
             <h2 class="box-title">抵達終點、金鐘立法會外的示威區</h2>
           </div>
         </div>
-        <div class="cut">
+        <div class="cut" v-bind:style="cutStyle">
           <div class="box">
             <h3>2019/06/09 17:00</h3>
             <h2 class="box-title">
@@ -63,7 +63,7 @@
             </h2>
           </div>
         </div>
-        <div class="cut cut-start">
+        <div class="cut cut-start" v-bind:style="cutStyle">
           <div class="box">
             <h3>2019/06/09 19:00</h3>
             <div class="image">
@@ -83,7 +83,7 @@
             <h3 class="box-title">民陣在立法會道舉行集會</h3>
           </div>
         </div>
-        <div class="cut cut-start">
+        <div class="cut cut-start" v-bind:style="cutStyle">
           <div class="box">
             <h3>2019/06/09 21:00</h3>
             <div class="image">
@@ -103,26 +103,26 @@
             <h3 class="box-title">金鐘站外警方出動多輛運員車等警車戒備</h3>
           </div>
         </div>
-        <div class="cut">
+        <div class="cut" v-bind:style="cutStyle">
           <div class="box">
             <h3>2019/06/09 22:00</h3>
             <h2 class="box-title">民陣宣布集會遊行結束</h2>
           </div>
         </div>
 
-        <div class="cut">
+        <div class="cut" v-bind:style="cutStyle">
           <div class="box">
             <h3>2019/06/12 12萬人</h3>
             <h1 class="box-title">群眾佔領行動</h1>
           </div>
         </div>
-        <div class="cut">
+        <div class="cut" v-bind:style="cutStyle">
           <div class="box">
             <h3>2019/06/12 07:55</h3>
             <h2 class="box-title">示威者衝出夏慤道與龍和道，展開佔領行動</h2>
           </div>
         </div>
-        <div class="cut">
+        <div class="cut" v-bind:style="cutStyle">
           <div class="box">
             <h3>2019/06/12 12:00</h3>
             <div class="image">
@@ -142,7 +142,7 @@
             <h3 class="box-title">中午時佔領情況</h3>
           </div>
         </div>
-        <div class="cut">
+        <div class="cut" v-bind:style="cutStyle">
           <div class="box">
             <h3>2019/06/12 16:00</h3>
             <div class="image">
@@ -162,7 +162,7 @@
             <h3 class="box-title">警察在添美道附近發放催淚彈</h3>
           </div>
         </div>
-        <div class="cut cut-start">
+        <div class="cut cut-start" v-bind:style="cutStyle">
           <div class="box">
             <h3>2019/06/12 20:00</h3>
             <div class="image">
@@ -182,20 +182,20 @@
             <h3 class="box-title">不斷施放催淚彈之後，示威者陸續退到中環</h3>
           </div>
         </div>
-        <div class="cut">
+        <div class="cut" v-bind:style="cutStyle">
           <div class="box">
             <h3>2019/06/13 01:00</h3>
             <h2 class="box-title">凌晨1時，大部份示威者已經散去</h2>
           </div>
         </div>
 
-        <div class="cut">
+        <div class="cut" v-bind:style="cutStyle">
           <div class="box">
             <h3>2019/06/16 14:43 200萬+1人</h3>
             <h1 class="box-title">反送中大遊行</h1>
           </div>
         </div>
-        <div id="cut-head" class="cut">
+        <div id="cut-head" class="cut" v-bind:style="cutStyle">
           <svg
             class="head"
             xmlns="http://www.w3.org/2000/svg"
@@ -235,7 +235,7 @@
             </h4>
           </div>
         </div>
-        <div class="cut">
+        <div class="cut" v-bind:style="cutStyle">
           <div class="box">
             <h3>2019/06/16 14:00</h3>
             <div class="image">
@@ -255,13 +255,13 @@
             <h3 class="box-title">在維多利亞公園內等待出發的遊行人士</h3>
           </div>
         </div>
-        <div class="cut">
+        <div class="cut" v-bind:style="cutStyle">
           <div class="box">
             <h3>2019/06/16 14:43</h3>
             <h2 class="box-title">一樣由維園草坪起步，遊行至金鐘立法會</h2>
           </div>
         </div>
-        <div class="cut">
+        <div class="cut" v-bind:style="cutStyle">
           <div class="box">
             <h3>2019/06/16 14:50</h3>
             <h2 class="box-title">
@@ -269,7 +269,7 @@
             </h2>
           </div>
         </div>
-        <div class="cut">
+        <div class="cut" v-bind:style="cutStyle">
           <div class="box">
             <h3>2019/06/16 15:09</h3>
             <div class="image">
@@ -289,7 +289,7 @@
             <h3 class="box-title">遊行人士途徑銅鑼灣軒尼詩道</h3>
           </div>
         </div>
-        <div class="cut">
+        <div class="cut" v-bind:style="cutStyle">
           <div class="box">
             <h3>2019/06/16 15:36</h3>
             <div class="image">
@@ -309,19 +309,19 @@
             <h3 class="box-title">灣仔軒尼詩道警察總部附近遊行情況</h3>
           </div>
         </div>
-        <div class="cut">
+        <div class="cut" v-bind:style="cutStyle">
           <div class="box">
             <h3>2019/06/16 16:05</h3>
             <h2 class="box-title">首批遊行人士抵達金鐘添美道終點</h2>
           </div>
         </div>
-        <div class="cut">
+        <div class="cut" v-bind:style="cutStyle">
           <div class="box">
             <h3>2019/06/16 16:02</h3>
             <h2 class="box-title">因人潮過多開放駱克道分流遊行人士</h2>
           </div>
         </div>
-        <div class="cut">
+        <div class="cut" v-bind:style="cutStyle">
           <div class="box">
             <h3>2019/06/16 16:22</h3>
             <h2 class="box-title">
@@ -329,19 +329,19 @@
             </h2>
           </div>
         </div>
-        <div class="cut">
+        <div class="cut" v-bind:style="cutStyle">
           <div class="box">
             <h3>2019/06/16 16:38</h3>
             <h2 class="box-title">謝斐道行車線亦已開放</h2>
           </div>
         </div>
-        <div class="cut cut-start">
+        <div class="cut cut-start" v-bind:style="cutStyle">
           <div class="box">
             <h3>2019/06/16 17:30</h3>
             <h2 class="box-title">下午5時半，莊士敦道亦開放予市民遊行</h2>
           </div>
         </div>
-        <div class="cut">
+        <div class="cut" v-bind:style="cutStyle">
           <div class="box">
             <h3>2019/06/16 18:40</h3>
             <div class="image">
@@ -361,7 +361,7 @@
             <h3 class="box-title">遊行人士再次佔領夏慤道所有行車線</h3>
           </div>
         </div>
-        <div class="cut">
+        <div class="cut" v-bind:style="cutStyle">
           <div class="box">
             <h3>2019/06/16 20:06</h3>
             <div class="image">
@@ -383,7 +383,7 @@
             </h3>
           </div>
         </div>
-        <div class="cut">
+        <div class="cut" v-bind:style="cutStyle">
           <div class="box">
             <h3>2019/06/16 21:48</h3>
             <div class="image">
@@ -403,7 +403,7 @@
             <h3 class="box-title">金鐘道的遊行人士也主動讓路予救護車經過</h3>
           </div>
         </div>
-        <div class="cut">
+        <div class="cut" v-bind:style="cutStyle">
           <div class="box">
             <h3>2019/06/17 02:00</h3>
             <h2 class="box-title">
@@ -413,7 +413,7 @@
         </div>
       </div>
     </div>
-    <div class="cut cover">
+    <div class="cut cover" v-bind:style="cutStyle">
       <h5 class="footer">
         資料來源:
         <a
@@ -468,6 +468,13 @@ export default {
   },
   destroyed() {
     this.unbind();
+  },
+  computed: {
+    cutStyle: function() {
+      return {
+        height: `${this.height}px`
+      };
+    }
   },
   methods: {
     bind() {

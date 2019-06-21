@@ -1,7 +1,24 @@
 language: node_js
+
 node_js:
   - "lts/dubnium"
+
 install:
   - npm ci
+
 script:
   - npm run lint
+
+deploy:
+  provider: script
+  script:
+    - cd dist
+    - git init
+    - git config user.name "${GITHUB_NAME}"
+    - git config user.email "${GITHUB_EMAIL}"
+    - git add -A
+    - git commit -m 'deploy'
+    - git push -f "https://${GITHUB_TOKEN}@github.com/abel1105/hk-extradition-law.git" master:gh-pages
+  on:
+    branch: master
+    tags: true
